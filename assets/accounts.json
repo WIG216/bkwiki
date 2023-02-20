@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Current account",
+        "desc": "A current account is a deposit account for traders, business owners, and entrepreneurs, who need to make and receive payments more often than others. These accounts hold more liquid deposits with no limit on the number of transactions per day. Current accounts allow overdraft facility, that is withdrawing more than what is currently available in the account. Also, unlike savings accounts, where you earn some interest, these are zero-interest bearing accounts. You need to maintain a minimum balance to be able to operate current accounts. ",
+        "img": ""
+
+    },
+    {
+        "title": " Savings account ",
+        "desc": "A savings bank account is a regular deposit account, where you earn a minimum rate of interest. Here, the number of transactions you can make each month is capped. Banks offer a variety of Savings Accounts based on the type of depositor, features of the product, age or purpose of holding the account, and so on.",
+        "img": ""
+
+    },
+    {
+        "title": "Salary account",
+        "desc": "Among the different types of bank accounts, your salary account is the one you have opened as per the tie-up between your employer and the bank. This is the account, where salaries of every employee are credited to at the beginning of the pay cycle. Employees can pick their type of salary account based on the features they want. The bank, where you have a salary account, also maintains reimbursement accounts; this is where your allowances and reimbursements are credited to. ",
+        "img": ""
+
+    },
+    {
+        "title": "Fixed deposit account",
+        "desc": "To park your funds and earn a decent rate of interest on it, there are different types of accounts like fixed deposits and recurring deposits. A fixed deposit (FD) account allows you to earn a fixed rate of interest for keeping a certain sum of money locked in for a given time, that is until the FD matures. FDs range between a maturity period of seven days to 10 years. ",
+        "img": ""
+
+    },
+    {
+        "title": " Recurring deposit account",
+        "desc": "A recurring deposit (RD) has a fixed tenure. You need to invest a fixed sum of money in it regularly -- every month or once a quarter -- to earn interest. Unlike FDs, where you need to make a lump sum deposit, the sum you need to invest here is smaller and more frequent. You cannot change the tenure of the RD and the amount to be invested each month or quarter.",
+        "img": ""
+
+    }
+]
