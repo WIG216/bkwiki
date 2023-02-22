@@ -432,6 +432,8 @@ class _HomePageState extends State<HomePage> {
                                             Get.toNamed(RouteClass.mobile);
                                           } else if (index == 3) {
                                             Get.toNamed(RouteClass.multicanal);
+                                          } else if (index == 4) {
+                                            Get.toNamed(RouteClass.account);
                                           }
                                         },
                                         child: Container(
