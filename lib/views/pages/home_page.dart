@@ -18,6 +18,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List info = [];
+  List services = [];
+
   _initData() {
     DefaultAssetBundle.of(context)
         .loadString("assets/banks.json")
@@ -29,11 +31,23 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  _serviceData() {
+    DefaultAssetBundle.of(context)
+        .loadString("assets/services.json")
+        .then((value) {
+      setState(() {
+        services = json.decode(value);
+      });
+      // print(info);
+    });
+  }
+
   // final String routName;
   @override
   void initState() {
     super.initState();
     _initData();
+    _serviceData();
   }
 
   Widget build(BuildContext context) {
@@ -219,15 +233,10 @@ class _HomePageState extends State<HomePage> {
                               const SizedBox(
                                 width: 10,
                               ),
-                              GestureDetector(
-                                onTap: () {
-                                  Get.toNamed(RouteClass.bank);
-                                },
-                                child: Icon(
-                                  Icons.arrow_forward_ios,
-                                  size: 20,
-                                  color: lightTextColor,
-                                ),
+                              Icon(
+                                Icons.arrow_forward_ios,
+                                size: 20,
+                                color: lightTextColor,
                               ),
                             ],
                           ),
@@ -245,7 +254,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       child: GridView.builder(
                         physics: const NeverScrollableScrollPhysics(),
-                        itemCount: 4,
+                        itemCount: info.length,
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
@@ -270,6 +279,7 @@ class _HomePageState extends State<HomePage> {
                                   Image.asset(
                                     info[index]['img'],
                                     height: 50.0,
+                                    width: 50,
                                   ),
                                   SizedBox(
                                     height: 20,
@@ -334,6 +344,7 @@ class _HomePageState extends State<HomePage> {
                                     child: Image.asset(
                                       info[index]['img'],
                                       height: 40.0,
+                                      width: 40,
                                     ),
                                   ),
                                 ),
@@ -370,75 +381,96 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Container(
-              child: Column(
-                children: [
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 20,
-                        vertical: 10,
-                      ),
-                      child: GridView.builder(
-                        shrinkWrap: true,
-                        itemCount: 200,
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 3,
-                          crossAxisSpacing: 0.0,
-                          mainAxisSpacing: 10.0,
-                          childAspectRatio: 0.8,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Stack(
+                      children: [
+                        Container(
+                          height: 100,
+                          color: lightPrimaryColor,
                         ),
-                        itemBuilder: (context, index) {
-                          return Row(
+                        Container(
+                          height: MediaQuery.of(context).size.height,
+                          margin: EdgeInsets.only(
+                            top: 20,
+                          ),
+                          padding: EdgeInsets.only(
+                            left: 25,
+                            right: 25,
+                          ),
+                          decoration: BoxDecoration(
+                            color: lightScaffoldColor,
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(30),
+                              topRight: Radius.circular(30),
+                            ),
+                          ),
+                          child: Column(
                             children: [
-                              GestureDetector(
-                                onTap: () {},
-                                child: Container(
-                                  width:
-                                      (MediaQuery.of(context).size.width - 95) /
-                                          3,
-                                  height: 150,
-                                  padding: const EdgeInsets.only(
-                                    bottom: 5,
+                              Expanded(
+                                child: GridView.builder(
+                                  itemCount: services.length,
+                                  gridDelegate:
+                                      const SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 2,
+                                    mainAxisExtent: 150.0,
+                                    crossAxisSpacing: 10.0,
                                   ),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(15),
-                                    image: DecorationImage(
-                                      image: AssetImage(
-                                        "assets/images/register.png",
+                                  itemBuilder: (context, index) {
+                                    return Padding(
+                                      padding: const EdgeInsets.only(
+                                        top: 10,
                                       ),
-                                    ),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        blurRadius: 3,
-                                        offset: Offset(5, 5),
-                                        color: Color(0xFFD0E8F2),
-                                      ),
-                                    ],
-                                  ),
-                                  child: Center(
-                                    child: Align(
-                                      alignment: Alignment.bottomCenter,
-                                      child: Text(
-                                        "title",
-                                        style: TextStyle(
-                                          fontSize: 20,
-                                          color: Colors.black,
+                                      child: GestureDetector(
+                                        onTap: () {
+                                          if (index == 0) {
+                                            Get.toNamed(RouteClass.branch);
+                                          } else if (index == 1) {
+                                            Get.toNamed(RouteClass.atmlocator);
+                                          } else if (index == 2) {
+                                            Get.toNamed(RouteClass.mobile);
+                                          } else if (index == 3) {
+                                            Get.toNamed(RouteClass.multicanal);
+                                          }
+                                        },
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                          ),
+                                          child: Center(
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Image.asset(
+                                                  services[index]['img'],
+                                                  height: 70,
+                                                ),
+                                                SizedBox(
+                                                  height: 10,
+                                                ),
+                                                Text(
+                                                  services[index]['title'],
+                                                ),
+                                              ],
+                                            ),
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                  ),
+                                    );
+                                  },
                                 ),
                               ),
                             ],
-                          );
-                          ;
-                        },
-                      ),
+                          ),
+                        ),
+                      ],
                     ),
-                  )
-                ],
+                  ],
+                ),
               ),
             ),
           ],

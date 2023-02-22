@@ -1,0 +1,44 @@
+[
+    {
+        "img": "assets/images/branch.png",
+        "title": "Branch"
+    },
+   
+    {
+        "img": "assets/images/location.png",
+        "title": "ATM locator"
+    },
+   
+    {
+        "img": "assets/images/mobile.png",
+        "title": "Mobile"
+    },
+   
+    {
+        "img": "assets/images/multicanal.png",
+        "title": "Multicanal"
+    },
+   
+    {
+        "img": "assets/images/account.png",
+        "title": "Accounts"
+    },
+   
+    {
+        "img": "assets/images/loan.png",
+        "title": "Loans"
+    },
+   
+    {
+        "img": "assets/images/deposits.png",
+        "title": "Deposits"
+    },
+   
+    {
+        "img": "assets/images/card.png",
+        "title": "Cards"
+    }
+   
+    
+   
+]

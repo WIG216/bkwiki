@@ -77,29 +77,31 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const SizedBox(
                         height: 70,
                       ),
-                      RichText(
-                        text: TextSpan(
-                          text: "Don't have an account ?",
-                          style: const TextStyle(
-                            fontSize: 16,
-                            color: Colors.grey,
-                          ),
-                          children: [
-                            TextSpan(
-                              // onEnter: ,
-                              text: " Create an account",
-                              style: TextStyle(
-                                color: lightHeaderColor,
-                                fontWeight: FontWeight.w700,
-                              ),
-                            ),
-                          ],
+                      Text(
+                        "Don't have an account ?",
+                        style: const TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey,
                         ),
-                      )
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Get.toNamed(RouteClass.register);
+                        },
+                        child: Text(
+                          "Create an account",
+                          style: TextStyle(
+                            color: lightHeaderColor,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                   Container(
