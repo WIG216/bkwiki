@@ -4,6 +4,7 @@ import 'package:bkwiki/views/pages/bank_detail_page.dart';
 import 'package:bkwiki/views/pages/branch_page.dart';
 import 'package:bkwiki/views/pages/comparism_page.dart';
 import 'package:bkwiki/views/pages/home_page.dart';
+import 'package:bkwiki/views/pages/loan_page.dart';
 import 'package:bkwiki/views/pages/login_page.dart';
 import 'package:bkwiki/views/pages/mobile_page.dart';
 import 'package:bkwiki/views/pages/multicanal_detail_page.dart';
@@ -23,6 +24,7 @@ class RouteClass {
   static String multicanaldetail = "/multicanal/bank";
   static String account = "/account";
   static String compare = "/compare";
+  static String loan = "/loan";
 
   static String getLogin() => login;
   static String getRegistration() => register;
@@ -35,6 +37,7 @@ class RouteClass {
   static String getMultiCanalDetail() => multicanaldetail;
   static String getAccount() => account;
   static String getCompare() => compare;
+  static String getLoan() => loan;
 
   static List<GetPage> routes = [
     GetPage(page: () => LoginPage(), name: login),
@@ -48,5 +51,6 @@ class RouteClass {
     GetPage(page: () => MultiCanalDetailPage(), name: multicanaldetail),
     GetPage(page: () => AccountPage(), name: account),
     GetPage(page: () => ComparismPage(), name: compare),
+    GetPage(page: () => LoanPage(), name: loan),
   ];
 }

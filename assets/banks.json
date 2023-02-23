@@ -8,6 +8,9 @@
     "number of employees": "20,000+ (2021)",
     "sector": "Financial services company",
     "isChecked": false,
+    "bankaccountcost": "The cost of opening in Cameroon, in most cases, is free. Depending on the type of bank account to be created in Cameroon, the individual or entity may be asked to pay the sum of 10,000 XAF to 50,000 XAF as an initial deposit.",
+    "maxwithdraw": "The maximum amount an Individual customer can withdraw is N500,000 per week. This withdrawal can be made via ATM, Over the Counter (Branches) or via POS Agents",
+    "headerImg": "assets/images/uba_header.png",
     "desc": "United Bank for Africa Plc is a Multinational pan-African financial services group headquartered in Lagos and known as Africa’s Global Bank. It has subsidiaries in 20 African countries and offices in London, Paris and New York. In December 2021, UBA received its banking license to commence operations in the UAE."
   },
   {
@@ -19,6 +22,7 @@
     "sector": "Banking company",
     "number of employees": "20,000+ (2021)",
     "isChecked": false,
+    "headerImg": "assets/images/afriland_header.png",
     "desc": "Afriland First Bank is a full-service bank in Cameroon, with subsidiaries in the Democratic Republic of the Congo, Equatorial Guinea, Guinea, Liberia, South Sudan, São Tomé and Príncipe and Zambia. The bank was founded in Yaoundé in 1987 under the name of Caisse Commune d'Epargne et d'Investissement."
   },
   {
@@ -28,6 +32,7 @@
     "areas served": "Africa, Europe, United States, Asia",
     "headquaters": " Lomé, Togo",
     "sector": "Public Company",
+    "headerImg": "assets/images/echobank_header.png",
     "isChecked": false,
     "number of employees": "13,000 (2022)",
     "desc": "Ecobank, whose official name is Ecobank Transnational Inc., is a pan-African banking conglomerate, with banking operations in 33 African countries. It is the leading independent regional banking group in West Africa and Central Africa, serving wholesale and retail customers."
@@ -40,6 +45,7 @@
     "headquaters": "Libreville, Gabon",
     "sector": "Financial company",
     "isChecked": false,
+    "headerImg": "assets/images/bgi_header.png",
     "number of employees": "13,000 (2022)",
     "desc": "BGFIBank Group, whose full name is BGFIBank Group S.A., is a financial services organization headquartered in Gabon. The group has subsidiaries in eight countries including Gabon, Benin, Republic of the Congo, Democratic Republic of the Congo, Equatorial Guinea, Madagascar, France and Cote d'Ivoire."
   },
@@ -51,6 +57,7 @@
     "headquaters": "Yaoundé",
     "sector": "Financial company",
     "isChecked": false,
+    "headerImg": "assets/images/cca_header.png",
     "number of employees": "13,000 (2022)",
     "desc": "CCA-Bank en sa qualité de banque universelle observera un prolongement de sa mission d’inclusion financière à travers une financiarisation adaptée au tissu économique du Cameroun. Il s’agira de la collecte de l’épargne, de l’octroi de crédit, de l’offre et de la gestion des moyens de paiement dans le cadre d’une relation privilégiée avec sa clientèle constituée essentiellement des particuliers, PME et grandes entreprises."
   }

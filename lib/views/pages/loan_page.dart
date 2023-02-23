@@ -8,14 +8,14 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
 
-class AccountPage extends StatefulWidget {
-  const AccountPage({super.key});
+class LoanPage extends StatefulWidget {
+  const LoanPage({super.key});
 
   @override
-  State<AccountPage> createState() => _AccountPageState();
+  State<LoanPage> createState() => _LoanPageState();
 }
 
-class _AccountPageState extends State<AccountPage> {
+class _LoanPageState extends State<LoanPage> {
   List info = [];
   _initData() {
     DefaultAssetBundle.of(context)
@@ -35,18 +35,8 @@ class _AccountPageState extends State<AccountPage> {
   }
 
   Widget build(BuildContext context) {
-    Color getColor(Set<MaterialState> states) {
-      const Set<MaterialState> interactiveStates = <MaterialState>{
-        MaterialState.pressed,
-        MaterialState.hovered,
-        MaterialState.focused,
-      };
-      if (states.any(interactiveStates.contains)) {
-        return Colors.blue;
-      }
-      return Colors.black38;
-    }
-
+   
+      
     return Scaffold(
       appBar: AppBar(
         backgroundColor: lightPrimaryColor,

@@ -331,46 +331,52 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                             ),
-                            child: Row(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                    bottom: 0,
-                                  ),
-                                  child: Container(
-                                    alignment: Alignment.center,
-                                    width:
-                                        MediaQuery.of(context).size.width * 0.2,
-                                    child: Image.asset(
-                                      info[index]['img'],
-                                      height: 40.0,
-                                      width: 40,
+                            child: GestureDetector(
+                              onTap: () {
+                                Get.toNamed(RouteClass.bank);
+                              },
+                              child: Row(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                      bottom: 0,
+                                    ),
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      width: MediaQuery.of(context).size.width *
+                                          0.2,
+                                      child: Image.asset(
+                                        info[index]['img'],
+                                        height: 40.0,
+                                        width: 40,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Container(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.65,
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        info[index]['title'],
-                                        overflow: TextOverflow.ellipsis,
-                                        style: TextStyle(
-                                          fontSize: 20,
-                                          color: Colors.black,
-                                        ),
-                                      ),
-                                    ],
+                                  SizedBox(
+                                    width: 10,
                                   ),
-                                ),
-                              ],
+                                  Container(
+                                    width: MediaQuery.of(context).size.width *
+                                        0.65,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          info[index]['title'],
+                                          overflow: TextOverflow.ellipsis,
+                                          style: TextStyle(
+                                            fontSize: 20,
+                                            color: Colors.black,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           );
                         },
