@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:bkwiki/consts/colors.dart';
 import 'package:bkwiki/views/widgets/appbar.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +15,7 @@ class ComparismPage extends StatefulWidget {
 }
 
 class _ComparismPageState extends State<ComparismPage> {
+  final DataTableSource _data = MyData();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,110 +34,50 @@ class _ComparismPageState extends State<ComparismPage> {
           icon: Icons.arrow_back_ios_outlined,
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 25,
-        ),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 20,
-            ),
-            Table(
-              border: TableBorder.symmetric(
-                inside: BorderSide(
-                  width: .8,
-                  color: Colors.grey,
-                ),
-              ),
-              columnWidths: const <int, TableColumnWidth>{
-                0: FlexColumnWidth(),
-                1: FlexColumnWidth(),
-                2: FlexColumnWidth(),
-              },
-              defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-              children: [
-                TableRow(
-                  children: <Widget>[
-                    Container(
-                      alignment: Alignment.center,
-                      height: 32,
-                      // color: Colors.green,
-                    ),
-                    TableCell(
-                      child: Container(
-                        alignment: Alignment.center,
-                        height: 32,
-                        child: Text(
-                          "Ecobank",
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: 64,
-                      alignment: Alignment.center,
-                      child: Text(
-                        "UBA",
-                      ),
-                    ),
-                  ],
-                ),
-                TableRow(
-                  children: <Widget>[
-                    Container(
-                      alignment: Alignment.center,
-                      // color: Colors.green,
-                      child: Text(
-                        "Saving Account",
-                      ),
-                    ),
-                    TableCell(
-                      verticalAlignment: TableCellVerticalAlignment.top,
-                      child: Container(
-                        padding: EdgeInsets.all(8),
-                        child: Text(
-                          "A savings account is an interest-earning deposit account held at a bank.  This type of account usually pays, ",
-                        ),
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(8),
-                      child: Text(
-                        "A savings account is an interest-earning deposit account held at a bank.  This type of account usually pays, ",
-                      ),
-                    ),
-                  ],
-                ),
-                TableRow(
-                  // decoration: const BoxDecoration(
-                  //   color: Colors.grey,
-                  // ),
-                  children: <Widget>[
-                    Container(
-                      alignment: Alignment.center,
-                      child: Text(
-                        "Deposite Account",
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(8),
-                      child: Text(
-                        "A savings account is an interest-earning deposit account held at a bank.  This type of account usually pays, ",
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(8),
-                      child: Text(
-                        "A savings account is an interest-earning deposit account held at a bank.  This type of account usually pays, ",
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+      body: Column(children: [
+        PaginatedDataTable(
+          source: _data,
+          columns: [
+            DataColumn(label: Text("UBA")),
+            DataColumn(label: Text("ECOBANK")),
+            DataColumn(label: Text("Price")),
           ],
+          header: Center(
+            child: Text("Difference in banks"),
+          ),
+          columnSpacing: 100,
+          horizontalMargin: 60,
         ),
-      ),
+      ]),
     );
   }
+}
+
+class MyData extends DataTableSource {
+  final List<Map<String, dynamic>> _data = List.generate(
+      15,
+      (index) => {
+            "UBA": "Account type",
+            "ECOBANK": "Account type",
+            "Price": Random().nextInt(50000)
+          });
+  @override
+  DataRow? getRow(int index) {
+    return DataRow(cells: [
+      DataCell(Text(_data[index]['UBA'])),
+      DataCell(Text(_data[index]['ECOBANK'])),
+      DataCell(Text(_data[index]['Price'].toString())),
+    ]);
+    throw UnimplementedError();
+  }
+
+  @override
+  bool get isRowCountApproximate => false;
+
+  @override
+  int get rowCount => _data.length;
+
+  @override
+  // TODO: implement selectedRowCount
+  int get selectedRowCount => 0;
 }

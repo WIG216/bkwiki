@@ -50,6 +50,7 @@ class MyApp extends StatelessWidget {
               brightness: Brightness.light,
             ),
       ),
+      
       initialRoute: RouteClass.getLogin(),
       getPages: RouteClass.routes,
     );

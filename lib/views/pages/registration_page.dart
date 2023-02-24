@@ -20,6 +20,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
         child: Center(
           child: Column(
             children: [
+              SizedBox(
+                height: 24,
+              ),
               Container(
                 width: 300,
                 child: Image.asset("assets/images/register.png"),
@@ -106,10 +109,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                             style: TextStyle(
                               color: lightTextColor,
                             ),
-                            children: const[
-                               TextSpan(
+                            children: const [
+                              TextSpan(
                                 text: "Terms and Conditions",
                                 style: TextStyle(
+                                  height: 1.5,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),

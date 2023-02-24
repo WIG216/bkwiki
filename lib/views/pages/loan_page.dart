@@ -41,7 +41,7 @@ class _LoanPageState extends State<LoanPage> {
       appBar: AppBar(
         backgroundColor: lightPrimaryColor,
         title: const Text(
-          'Accounts',
+          'Loans',
           style: TextStyle(
             color: Colors.white,
           ),

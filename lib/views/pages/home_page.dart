@@ -261,39 +261,44 @@ class _HomePageState extends State<HomePage> {
                           mainAxisExtent: 150.0,
                         ),
                         itemBuilder: (context, index) {
-                          return Container(
-                            decoration: BoxDecoration(
-                                color:
-                                    const Color.fromRGBO(255, 255, 255, 0.634),
-                                borderRadius: BorderRadius.circular(15),
-                                border: Border.all(
-                                  color: lightTextColor.withOpacity(.08),
-                                )),
-                            margin: const EdgeInsets.all(8),
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    info[index]['img'],
-                                    height: 50.0,
-                                    width: 50,
-                                  ),
-                                  SizedBox(
-                                    height: 20,
-                                  ),
-                                  Text(
-                                    info[index]['title'],
-                                    overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w400,
-                                      color: lightTextColor,
+                          return GestureDetector(
+                            onTap: () {
+                              Get.toNamed(RouteClass.bank);
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: const Color.fromRGBO(
+                                      255, 255, 255, 0.634),
+                                  borderRadius: BorderRadius.circular(15),
+                                  border: Border.all(
+                                    color: lightTextColor.withOpacity(.08),
+                                  )),
+                              margin: const EdgeInsets.all(8),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Image.asset(
+                                      info[index]['img'],
+                                      height: 50.0,
+                                      width: 50,
                                     ),
-                                  ),
-                                ],
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    Text(
+                                      info[index]['title'],
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w400,
+                                        color: lightTextColor,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           );
@@ -440,6 +445,8 @@ class _HomePageState extends State<HomePage> {
                                             Get.toNamed(RouteClass.multicanal);
                                           } else if (index == 4) {
                                             Get.toNamed(RouteClass.account);
+                                          } else if (index == 5) {
+                                            Get.toNamed(RouteClass.loan);
                                           }
                                         },
                                         child: Container(
